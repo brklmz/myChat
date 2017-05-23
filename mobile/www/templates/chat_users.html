@@ -1,0 +1,16 @@
+<ion-view view-title="Kişiler" class="chat-user">
+    <ion-content has-bouncing="true" class="has-header has-footer" delegate-handle="userMessageScroll">
+
+
+        <div ng-repeat="users in allUsers" class="list">
+
+            <ion-item class="item item-thumbnail-left" href="#/app/chat-support/{{users.uye_id}}">
+                <img ng-if="users.img_url !== undefined" ng-src="{{users.img_url}}">
+                <h2>{{users.ad}} {{users.soyad}}</h2>
+
+            </ion-item>
+
+        </div>
+
+    </ion-content>
+</ion-view>

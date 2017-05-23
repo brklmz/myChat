@@ -1,0 +1,72 @@
+<ion-view>
+    <ion-content class="login_bg text-center register_page">
+        <div class="logo">
+            <img src="img/logo.png">
+        </div>
+
+        <form class="app_form">
+            <div class="list list-inset text-left">
+
+
+                <label class="item item-input">
+                  <input type="text" placeholder="Adınız" ng-model="data.name">
+              </label>
+                <label class="item item-input">
+                  <input type="text" placeholder="Soyadınız" ng-model="data.surname">
+              </label>
+                <label class="item item-input">
+                  <input type="text" placeholder="Kullanıcı Adı" ng-model="data.username">
+              </label>
+                <label class="item item-input">
+                  <input type="password" placeholder="Şifre" ng-model="data.password">
+              </label>
+                <label class="item item-input">
+                  <input type="password" placeholder="Şifre Tekrar" ng-model="data.password_retry">
+              </label>
+
+
+                <a href="#/login" class="button button-block main_btn bg_color_facebook icon-left ion-checkmark-round" ng-show="result>0">Kaydınız Onaylandı. Giriş için tıklayınız.</a>
+
+                <a href="javascript:void(0)" class="button button-block main_btn bg_color" ng-click="doRegister()">Kayıt Ol</a>
+                <a href="#/login" ng-show="!result" class="button button-block main_btn sec_bg ">Giriş Yap</a>
+
+
+            </div>
+        </form>
+
+    </ion-content>
+</ion-view>
+
+<script id="my-modal.html" type="text/ng-template">
+    <ion-modal-view class="ion-nifty-modal">
+        <ion-header-bar>
+            <h1 class="title">İşletme Kaydı Nedir ? </h1>
+        </ion-header-bar>
+        <div class="ion-modal-content-custom">
+            <ion-content class="padding">
+
+                Merhaba <br><br> İşletme girişi yaparak sistemde ayrıcalıklardan yararlanabilirsiniz.<br> İşletmenizi daha önce çıkartabilir , promosyonlarınızı i kampanyalarınızı bu şekilde büyük kitlelere ulaştırabilirsiniz.
+
+                <button class="button button-full button-assertive" ng-click="closeModal()">Okudum , Anladım.</button>
+            </ion-content>
+        </div>
+    </ion-modal-view>
+</script>
+
+
+<script id="my-modal-sozlesme.html" type="text/ng-template">
+    <ion-modal-view class="ion-nifty-modal">
+        <ion-header-bar>
+            <h1 class="title">Kullanıcı Sözleşmesi </h1>
+        </ion-header-bar>
+        <div class="ion-modal-content-custom">
+            <ion-content class="padding">
+
+                Merhaba <br><br> Üyeliğiniz ile beraber <span class="text-blue"> KALVERS </span> kullanıcı sözleşmesini kabul etmiş bulunuyorsunuz. Lütfen aşağıdaki sözleşmeyi dikkatlice okuyunuz. Üyeliğiniz ile beraber KALVERS kullanıcı sözleşmesini
+                kabul etmiş bulunuyorsunuz. Lütfen aşağıdaki sözleşmeyi dikkatlice okuyunuz. Üyeliğiniz ile beraber KALVERS kullanıcı sözleşmesini kabul etmiş bulunuyorsunuz. Lütfen aşağıdaki sözleşmeyi dikkatlice okuyunuz.
+
+                <button class="button button-full button-assertive" ng-click="closeModalSozlesme()">Okudum , Anladım.</button>
+            </ion-content>
+        </div>
+    </ion-modal-view>
+</script>

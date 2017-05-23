@@ -1,0 +1,27 @@
+<ion-view view-title="Fotoğraf Yükleme">
+    <ion-content class="login_bg text-center">
+
+        <div class="logo">
+            <img src="img/logo.png">
+        </div>
+
+
+        <div class="clear"></div>
+
+        <div class="list list-inset" style="background: none;margin: 20px 60px;">
+            <p>Profil fotoğrafınızı yükleyin</p>
+            <img src="img/add-photo.png" id="choose_img" ng-click="chooseOption()" style="margin: 25px auto;" />
+
+
+            <a href="javascript:void(0)" class="button button-block main_btn bg_color" ng-click="submitUpload()">Yükle</a>
+
+            <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}" style="text-align: center;height: 120px; width: 100%;">
+        </div>
+    </ion-content>
+</ion-view>
+
+
+
+<script id="templates/loading.html" type="text/ng-template">
+    <img src="img/train.gif" />
+</script>

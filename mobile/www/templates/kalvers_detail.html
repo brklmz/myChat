@@ -1,0 +1,11 @@
+<ion-view view-title="{{campaign_tasks[param-1].title}}">
+  <ion-content class="padding bg_white profile_data">
+     
+        <div class="task-detail" ng-bind-html="campaign_tasks[param-1].content | to_trusted"></div>
+
+        <a href="#/app/environment">
+            <button class="button button-block main_btn button-energized icon-left ion-ionic">Çevrendeki  Görevlere Göz At</button>
+        </a>
+
+  </ion-content>
+</ion-view>

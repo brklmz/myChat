@@ -1,0 +1,70 @@
+<ion-view view-title="Çevrenizdeki Görevler" cache-view="false" class="environment">
+    <ion-content class="map_page" scroll="false">
+        
+
+
+
+ <ng-map default-style="false" zoom="12" center='current-position' id="custom" disable-default-u-i="true">
+       
+       <!-- <info-window id="myInfoWindow">
+            <div ng-non-bindable class="ice">
+                
+                <a href="#/app/task-detail/{{val.id}}">
+              <div id="iw-container">
+                  <div class="iw-title">{{val.task_tittle}}</div>
+                  <div class="iw-content">
+                    <p>{{val.short_description}}</p>
+                    <div class="iw-subTitle">Kazanç  : {{val.budget}} TL </div>
+                    <p>Kalan Süre : {{taskArray[$index].betwenTime | millSecondsToTimeStringHome | to_trusted}}  </p>
+                  </div>
+                  <div class="iw-bottom-gradient"></div>
+                </div>
+                 </a>
+
+
+            </div>
+        </info-window> -->
+        <marker ng-repeat="c in task_markers"
+                position="[{{c.latitude}}, {{c.longitude}}]" title="{{c.task_tittle}}" id="{{c.id}}" on-click="showTaskDetail(event, c)" icon="img/findMyCarPinIcon.png">
+        </marker>
+
+ </ng-map>
+
+ 
+    <div class="marker_detail row" ng-show="marker_result" >
+
+    <i class="icon  ion-close-circled marker-close" ng-click="closeDetail()"></i>
+
+      <div class="col col-25 marker-img" ng-click="goDetail(val.id)"> <img src="img/m2.png" class="distane-img"> <br> 5.6 km mesafede </div>
+
+      <div class="col col-75 marker-right" ng-click="goDetail(val.id)">
+          <div class="map-task-title"> {{val.task_tittle}} </div>
+          <div class="map-task-content">{{val.short_description}} </div>
+
+          <div class="row">
+          <div class="map-task-price col col-75"> <i class="icon ion-card"></i> {{val.budget}} TL </div>
+          <div class="map-task-people col col-25"> 
+                <i class="icon ion-ios-people icon-home-time"></i>
+                {{val.people}} 
+
+          </div>
+
+          </div>
+      </div>
+
+    </div>
+
+
+             
+    </ion-content>
+
+     <ion-tabs class="tabs-positive tabs-icon-top">
+          <ion-tab title="Son Eklenenler" icon-on="ion-ios-list-outline" icon-off="ion-aperture" ng-click="goto('home')">       
+          </ion-tab>
+          <ion-tab title="Etrafındakiler" icon-on="ion-ionic" icon-off="ion-ionic" ng-click="goto('environment')">   
+          </ion-tab>
+          <ion-tab title="Fırsatlar" icon-on="ion-ios-world" icon-off="ion-ios-world-outline" ng-click="goto('global')">
+          </ion-tab>
+     </ion-tabs>
+
+</ion-view>

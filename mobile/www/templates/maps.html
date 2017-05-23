@@ -1,0 +1,40 @@
+<ion-view view-title="Home" cache-view="false">
+    <ion-content class="map_page" scroll="false">
+        <div id="map" data-tap-disabled="true" ng-style="{'height':height}">
+        </div>
+          <div class="search_inp"  ng-if="!available_street">
+                <div class="from_to bg_color">
+                    <span class="main_color"><i class="ion-location"></i>From</span> 
+                    <label class="item item-input">
+                        <input type="text" placeholder="cannon street , Liverpool">
+                    </label>
+                    <button class="button ser_btn"><i class="ion-android-locate"></i></button>
+                </div>  
+               <div class="from_to to_inp bg_color2">
+                    <span><i class="ion-location"></i>To</span> 
+                    <label class="item item-input">
+                        <input type="text" placeholder="cannon street , Liverpool">
+                    </label>
+                    <button class="button ser_btn"><i class="ion-android-locate"></i></button>
+                </div>  
+           </div>
+           <button class="button button-block main_btn sec_bg map_btn" ng-click="showStreet()" ng-if="!available_street">Avalible Streets</button>
+           <ion-scroll  direction="y" class="street_list padding" ng-if="available_street" id="ava_street">
+           <ion-list>
+                <ion-item href="#/app/road_detail" ng-repeat="item in streets">
+                   <div class="row">
+                      <div class="col col-75 bg_color2">
+                          <h3 class="main_color">{{item.name}}</h3>
+                          <p>Estimated time {{item.time}}</p> 
+                          <p>Distance {{item.distance}}</p>
+                      </div>
+                     <div class="col col-25 sec_bg">
+                         <p>Let's Go</p>
+                     </div>   
+                   </div>
+                </ion-item>
+           </ion-list>
+        </ion-scroll>       
+    </ion-content>
+</ion-view>
+ 

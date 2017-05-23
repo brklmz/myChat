@@ -1,0 +1,75 @@
+<ion-view view-title="Verdiğiniz Görevler">
+
+  <div class="bar bar-header row-task">
+    <button class="button button-assertive custom-btns" ng-click="step=1" ng-class="{'active-task':step==1}">
+        Devam Edenler
+    </button>
+    <button class="button button-assertive custom-btns-center" ng-click="step=2" ng-class="{'active-task':step==2}">
+        Tamamlananlar
+    </button>
+      
+  </div>
+
+    <ion-content  class="margin-top44" on-swipe-left="stepLeft()" on-swipe-right="stepRight()">
+
+   <div class="mycaris"  on-hold="showDeleteIcon()" ng-repeat="task in tasks" ng-show="task.status=='1' && step==1" ng-click="go(task.id)"> <!-- ng-repeat="item in items | orderBy:'current'" -->
+        <div class="row mylistcartop" > 
+         <div class="canyoudelete"> <i class="ion-ios-close" ng-click="hideItem(item)"> </i> </div>   
+            <div class="col col-67"> 
+                 <div class="detail-title"> {{task.task_tittle}} </div>
+                <div class="detail-category"> {{task.task_info[0].categori}} </div>
+                <div class="detail-desc" > {{task.short_description}} </div>
+                <div class="botmygaragetext" >{{task.added_date}}</div>
+            </div>
+            <div class="col col-33 text-center"><img src="{{task.img_url}}" ng-show="task.img_url" class="img-responsive detail-img" ></div>
+            <div style="clear:both;"></div>
+         </div>
+      
+         <div class="row paddingnone"><div class="rectrow rectangle"></div> </div>  
+    </div>
+
+
+     <div class="mycaris"  on-hold="showDeleteIcon()" ng-repeat="task in tasks" ng-show="task.status=='0' && step==2"> 
+        <div class="row mylistcartop" > 
+         <div class="canyoudelete"> <i class="ion-ios-close" ng-click="hideItem(item)"> </i> </div>   
+            <div class="col col-67"> 
+                <div class="detail-title"> {{task.task_tittle}} </div>
+                <div class="detail-category"> {{task.task_info[0].categori}} </div>
+                <div class="detail-desc" > {{task.short_description}} </div>
+                <div class="botmygaragetext" >{{task.added_date}}</div>
+            </div>
+            <div class="col col-33 text-center"><img ng-show="task.img_url" src="{{task.img_url}}" class="img-responsive detail-img"></div>
+            <div style="clear:both;"></div>
+         </div>
+      
+         <div class="row paddingnone"><div class="rectrow rectangle"></div> </div>  
+     </div>
+
+
+     <div class="mycaris"  ng-show="continue==0 && step==1"> 
+        <div class="row mylistcartop">   
+            <div class="col detail-list"> 
+                <i class="icon ion-flash-off  icon-not"></i><br>
+                <div class="detail-notfound"> Devam eden göreviniz bulunmamaktadır. </div>
+            </div>
+         </div>
+         
+     </div>
+
+     <div class="mycaris"  ng-show="finish_task==0 && step==2"> 
+        <div class="row mylistcartop">   
+            <div class="col detail-list"> 
+                <i class="icon ion-flash-off  icon-not"></i><br>
+                <div class="detail-notfound"> Bitirmiş olduğunuz görev bulunmamaktadır. </div>
+            </div>
+         </div>
+         
+     </div>
+
+    </ion-content>
+</ion-view>
+
+
+<script id="templates/loading.html" type="text/ng-template">
+        <img src="img/train.gif"/> 
+</script>

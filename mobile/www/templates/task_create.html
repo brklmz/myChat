@@ -1,0 +1,237 @@
+<ion-view view-title="Yeni Görev Oluştur" class="create-task-view">
+
+  <div class="bar bar-header row-task">
+    <button class="button button-assertive custom-btns" ng-click="step=1" ng-class="{'active-task':step==1}">
+        Tanımla
+    </button>
+    <button class="button button-assertive custom-btns-center" ng-click="step=2" ng-class="{'active-task':step==2}">
+        Kriterleri Oluştur
+    </button>
+    <button class="button button-assertive custom-btns" ng-click="step=3" ng-class="{'active-task':step==3}">
+        Onayla ve Gönder
+    </button>    
+  </div>
+
+  <ion-content class="padding contact_us ">
+
+        <div class="list" ng-show="step==1">
+            <span>Görev Başlığı</span>
+            <label class="item item-input">
+                <input type="text" ng-model="task.task_tittle">
+            </label>
+            
+             <label class = "item item-input item-select">
+               <div class = "input-label">
+                  Kategori
+               </div>
+                
+               <select ng-model="task.category_id">
+                  <option value="0" ng-selected="true">Genel</option>
+                  <option value="2">Sağlık</option>
+                  <option value="3"> Gıda</option>
+               </select>
+            </label>
+            
+            <span>Kısa Açıklaması</span>
+            <label class="item item-input">
+                <textarea rows="8" ng-model="task.short_description"></textarea>
+            </label>
+            
+            <span>Bütçeniz (TL)</span>
+            <label class="item item-input">
+                <input type="number" ng-model="task.budget">
+            </label>
+
+            <div class="row">
+              <span class="col col-50">Başlangıç Tarihi</span>
+              <label class="item item-input col col-50">
+                  <input  type="{{dateType}}" ng-model="task.start_date">
+              </label>
+            </div>  
+
+             <div class="row">
+              <span class="col col-50">Başlangıç Saati</span>
+              <label class="item item-input col col-50">
+                  <input  type="{{dateTimes}}" ng-model="task.start_time">
+              </label>
+            </div>  
+            
+
+            <div class="row">
+              <span class="col col-50">Bitiş Tarihi</span>
+              <label class="item item-input col col-50">
+                  <input type="{{dateType}}" ng-model="task.finish_date">
+              </label>
+            </div>
+
+            <div class="row">
+              <span class="col col-50">Bitiş Saati</span>
+              <label class="item item-input col col-50">
+                  <input type="{{dateTimes}}" ng-model="task.finish_time">
+              </label>
+            </div>
+
+            <label class = "item item-input item-select">
+               <div class = "input-label">
+                  Görev Yapım Süresi
+               </div>
+                
+               <select ng-model="task.application_period">
+                  <option value="2">1 saat</option>
+                  <option value="3">3 saat</option>
+                  <option value="6">6 saat </option>
+                  <option value="12">12 saat </option>
+                  <option value="24" ng-selected="true">1 gün</option>
+                  <option value="48">2 gün</option>
+                  <option value="72">3 gün</option>
+                  <option value="120">5 gün</option>
+                  <option value="168">7 gün</option>
+                  <option value="240">10 gün</option>
+                  <option value="336">14 gün</option>
+                  <option value="504">21 gün</option>
+                  <option value="720">30 gün</option>
+                  <option value="960">40 gün</option>
+                  <option value="1200">50 gün</option>
+                  <option value="1440">60 gün</option>
+               </select>
+            </label>
+
+
+             <label class = "item item-input item-select">
+               <div class = "input-label">
+                  Yapılması istenen kişi sayısı
+               </div>
+                
+               <select ng-model="task.people">
+                  <option value="1" ng-selected="true">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+               </select>
+            </label>
+
+            
+            <span>Açıklaması </span>
+            <label class="item item-input">
+                <textarea rows="8" ng-model="task.explanation"></textarea>
+            </label>
+            
+        </div>
+        
+        <div class="list" ng-show="step==2">    
+
+        <div class="card criter-cart">
+          <div class="item item-text-wrap criter-item">
+            Görev içerisinde birden fazla alt seçenekler belirtebilirsiniz.Bu şekilde  ayrım noktalarını daha iyi belirtmiş olursunuz.
+          </div>
+        </div>
+          
+            <span>Kriter Başlığı</span>
+            <label class="item item-input">
+                <input type="text" ng-model="todo.title" placeholder="Kriter başlığı giriniz.">
+            </label>
+            
+            <span>Kriter Açıklaması</span>
+            <label class="item item-input">
+                <textarea rows="5" ng-model="todo.desc" placeholder="Kriterinize Açıklama yazınız."></textarea>
+            </label>
+
+            <span>Kriter Bütçesi (₺)</span>
+            <label class="item item-input">
+                <input type="number" ng-model="todo.price" placeholder="0">
+            </label>
+
+            <button class="button  col button-criter icon-left ion-plus-circled" ng-click="todoAdd()">Kaydet ve yeni ekle</button>
+            <br>
+
+            <ion-list>
+               <ion-checkbox ng-repeat="todo in todoList" ng-model="todo.done" ng-checked={{todo.done}}>
+
+                  <div class="text-right col-50 float-left"> {{todo.todoTitle}} </div>
+                  <div class="text-right col-25 float-right"> {{todo.todoPrice}} TL</div>
+               </ion-checkbox>
+            </ion-list>
+
+           <button class="button button-block main_btn bg_color icon-left ion-trash-a" ng-click="remove()" ng-show="todoList.length>0">Seçili Kriterleri Sil</button>
+           
+        </div>
+        
+        <div class="list" ng-show="step==3">   
+            <span>Görev Merkezi Belirle (Hareketli nesneyi görev merkezine konumlandırınız.)</span>
+           <!-- <div id="map5" data-tap-disabled="true" ng-style="{'height':'400px'}"> -->
+            <ng-map  zoom="12"  id="newtask" center="[40.74, -74.18]" disable-default-u-i="true">
+                  <marker draggable=true position="current" on-dragend="getCurrentLocation()" animation="Animation.BOUNCE" centered="true"></marker>    
+            </ng-map>
+
+
+               <br> 
+               <div class = "input-label row">
+                   Görevi bir resimle anlat
+               </div> 
+         
+             <div class="clear"></div>
+             <label class = "item item-input item-select">
+               <div class="row">
+                    <button class="button button-full button-assertive col col-50" ng-click="takePhoto()">
+                       Fotoğraf Çek
+                    </button>
+                    <button class="button button-full button-assertive col col-50" ng-click="choosePhoto()">
+                       Galeriden Seç
+                    </button>
+                    <br>
+                    <div class="clear"></div>
+                    <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}" style="text-align: center;height: 120px; width: 100%;">
+               </div>
+            </label> 
+
+
+            <label class = "item item-input item-select">
+               <div class = "input-label">
+                  Görev Mesafesi Belirle (km)
+               </div>
+                
+               <select ng-model="task.distance">
+                  <option value="1" ng-selected="true">1 km</option>
+                  <option value="2">2 km</option>
+                  <option value="3">3 km</option>
+                  <option value="4">4 km</option>
+                  <option value="5">5 km</option>
+                  <option value="6">6 km</option>
+                  <option value="7">7 km</option>
+                  <option value="8">8 km</option>
+                  <option value="9">9 km</option>
+                  <option value="10">10 km</option>
+                  <option value="20">20 km</option>
+                  <option value="30">30 km</option>
+                  <option value="40">40 km</option>
+                  <option value="50">50 km</option>
+                  <option value="60">60 km</option>
+                  <option value="70">70 km</option>
+                  <option value="80">80 km</option>
+                  <option value="90">90 km</option>
+                  <option value="100">100 km</option>
+               </select>
+            </label>
+
+         
+             <button class="button button-block main_btn button-positive icon-left ion-ios-plus-outline" ng-click="addTask()">Kaydet</button>
+        </div>
+
+  </ion-content>
+</ion-view>

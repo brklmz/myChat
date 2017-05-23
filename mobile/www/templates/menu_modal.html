@@ -1,0 +1,80 @@
+<ion-modal-view class="menu_modal">
+    <ion-content>
+
+        <!--   <div class="profile_img main_color">
+             <img src="{{picture}}"/>
+        </div>
+        <center>
+            <p class="name white">{{name}}</p>
+            <a class="button   button-assertive btn-orange icon-left ion-card" href="#/login">0.00 TL</a>
+        </center> 
+      -->
+
+        <div class="menu-top">
+
+            <div class="row ">
+                <img src="{{picture}}" id="my-profile-image">
+            </div>
+
+            <div class="row">
+                <div class="name">{{first_name}} {{last_name}} </div>
+            </div>
+
+            <div class="profile_point">
+                <div class="name">5,252 <br> Tecrübe Puanı</div>
+            </div>
+
+            <div class="profile_point_start">
+                <span class="star_text"> 5/4.9 Başarı </span> <br>
+                <i class="icon ion-ios-star star_profile"></i>
+                <i class="icon ion-ios-star star_profile"></i>
+                <i class="icon ion-ios-star star_profile"></i>
+                <i class="icon ion-ios-star star_profile"></i>
+                <i class="icon ion-ios-star star_profile"></i>
+            </div>
+
+        </div>
+
+        <div class="safe-icon">
+            <div class="profile-price"> 0.00 TL </div>
+        </div>
+
+
+
+        <br>
+        <ion-list>
+            <ion-item href="#/app/home" ng-click="closemenu_modal();activeItem(1);goHome()" ng-class="{'animated zoomIn':active_itemcolor==1}">
+                <img src="img/m6.png">
+                <p ng-class="{'main_color':active_itemcolor==1}">Anasayfa</p>
+            </ion-item>
+            <ion-item href="#/app/buy_task" ng-click="closemenu_modal();activeItem(2)" ng-class="{'animated zoomIn':active_itemcolor==2}">
+                <img src="img/m4.png">
+                <p ng-class="{'main_color':active_itemcolor==2}">Yapılan Görevler</p>
+            </ion-item>
+            <ion-item href="#/app/my_task" ng-click="closemenu_modal();activeItem(3)" ng-class="{'animated zoomIn':active_itemcolor==3}">
+                <img src="img/m4.png">
+                <p ng-class="{'main_color':active_itemcolor==3}">Verilen Görevler</p>
+            </ion-item>
+            <ion-item href="#/app/profile" ng-click="closemenu_modal();activeItem(4)" ng-class="{'animated zoomIn':active_itemcolor==4}">
+                <img src="img/m1.png">
+                <p ng-class="{'main_color':active_itemcolor==4}">Profil</p>
+            </ion-item>
+            <ion-item href="#/app/setting" ng-click="closemenu_modal();activeItem(5)" ng-class="{'animated zoomIn ':active_itemcolor==5}">
+                <img src="img/m3.png">
+                <p ng-class="{'main_color':active_itemcolor==5}">Ayarlar</p>
+            </ion-item>
+            <ion-item href="#/app/about" ng-click="closemenu_modal();activeItem(6)" ng-class="{'animated zoomIn':active_itemcolor==6}">
+                <img src="img/m4.png">
+                <p ng-class="{'main_color':active_itemcolor==6}">Hakkımızda</p>
+            </ion-item>
+            <ion-item href="#/app/chat-users" ng-click="closemenu_modal();activeItem(7)" ng-class="{'animated zoomIn':active_itemcolor==7}">
+                <img src="img/m4.png">
+                <p ng-class="{'main_color':active_itemcolor==7}">Destek</p>
+            </ion-item>
+            <ion-item href="#/logout" ng-click="closemenu_modal();activeItem(8)" ng-class="{'animated zoomIn':active_itemcolor==8}">
+                <img src="img/m5.png">
+                <p ng-class="{'main_color':active_itemcolor==8}">Çıkış</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-modal-view>

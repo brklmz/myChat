@@ -1,0 +1,92 @@
+<ion-view view-title="PROFİL">
+    <ion-content class="bg_white profile_data task_details">
+
+
+        <div class="profile-top">
+
+            <div class="row ">
+                <img src="{{picture}}" id="my-profile-image">
+            </div>
+
+            <div class="row">
+                <div class="name">{{first_name}} {{last_name}} </div>
+            </div>
+
+            <div class="profile_point">
+                <div class="name">5,252 <br> Tecrübe Puanı</div>
+            </div>
+
+            <div class="profile_point_start">
+                <span class="star_text"> 5/4.9 Başarı </span> <br>
+                <i class="icon ion-ios-star star_profile"></i>
+                <i class="icon ion-ios-star star_profile"></i>
+                <i class="icon ion-ios-star star_profile"></i>
+                <i class="icon ion-ios-star star_profile"></i>
+                <i class="icon ion-ios-star star_profile"></i>
+            </div>
+
+        </div>
+
+        <div class="safe-icon">
+            <div class="profile-price"> 0.00 TL </div>
+        </div>
+
+
+        <div class="padding profile_content">
+
+            <div class="prof-content hide">
+                <div class="list">
+                    <label class="item item-input">
+                <span class="input-label sec_bg">Email</span>
+                <input type="text" ng-value="name">
+            </label>
+                    <label class="item item-input">
+                <span class="input-label sec_bg">Telefon Numarası</span>
+                <input type="number"  value="" class="black">
+            </label>
+                    <label class="item item-input">
+                <span class="input-label sec_bg">Doğum Tarihi</span>
+                <input type="date" value="">  
+            </label>
+                </div>
+
+            </div>
+
+
+            <div class="prof-content">
+
+                <div class="list">
+
+                    <a class="item item-icon-left item-icon-right" href="#/app/account_change">
+                        <i class="icon ion-ios-person"></i> Hesap Bilgileri<br>
+                        <span class="success"> Tamamlandı </span>
+                        <i class="icon ion-ios-arrow-right"></i>
+
+                    </a>
+
+                    <a class="item item-icon-left item-icon-right" href="#/app/payment_change">
+                        <i class="icon ion-card"></i> Ödeme Bilgileriniz<br>
+                        <span class="warning"> Tamamlanmadı </span>
+                        <i class="icon ion-ios-arrow-right"></i>
+                    </a>
+
+                    <a class="item item-icon-left item-icon-right" href="#/app/password_change">
+                        <i class="icon ion-lock-combination"></i> Şifre Ayarları
+                        <i class="icon ion-ios-arrow-right"></i>
+                    </a>
+
+
+                </div>
+
+            </div>
+
+            <a class="item item-icon-left item-icon-right" href="#/app/my_task">
+                <button class="button button-block main_btn button-green  icon-left ion-ios-list-outline ">Görev Geçmişi</button>
+            </a>
+
+        </div>
+
+
+
+    </ion-content>
+</ion-view>

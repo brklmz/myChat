@@ -1,0 +1,163 @@
+<ion-view view-title="{{task_detail.task_tittle}}">
+  <ion-content class="padding bg_white profile_data">
+
+  <div class="row header-top">
+
+
+         <ion-list class="street_list header-list">
+            <ion-item class="detail-item">
+               <div class="row">
+
+                  <img id="profile-image" src="img/profile.png"><!-- data-ng-src="data:image/jpg;base64,{{imgurl}}" -->
+
+                  <div class="price_tag">{{task_detail.budget}} ₺ </div>
+
+                  <div class="col  bg_color5">
+                      <h3 class="main_color main-list-item">{{task_detail.task_tittle}}</h3>
+                      <p class="text-back">{{task_detail.short_description}}</p> 
+                  </div>
+               </div>
+
+               <div class="row item-sub">
+
+                   <div class="col col-80">
+                    <ion-item class="item-text-wrap home-item">
+                          <i class="icon ion-clock icon-home-time"></i>
+                         {{backTime}} Kaldı.
+                    </ion-item>
+                   </div> 
+
+                    <div class="col col-20 right-home-list ">
+                    <ion-item class="item-text-wrap home-item">
+                         <i class="icon ion-ios-people icon-home-time"></i>
+                        {{task_detail.people}} 
+                    </ion-item>
+                   </div> 
+
+               </div>
+
+            </ion-item>
+       </ion-list>
+
+
+    </div>
+
+
+   <div class="header-content-profile" ng-show="users">
+      
+      <div class="list row" ng-repeat="user in users" ng-show="!is_show_user_check[$index]">
+
+        <div class="col col-75">
+          <div class="item item-avatar">
+            <img src="venkman.jpg">
+            <h2>{{user.ad}} {{user.soyad}}</h2>
+            <p>{{user.added_date}}</p>
+          </div>
+        </div>
+        <div class="col col-25">  
+            <button class="button button-small button-assertive user-active" ng-show="user.work_status==0 && !is_show_user[$index]"  ng-click="checkTaskUser(user.task_id,user.user_id);is_show_user[$index]=true">
+              Aktif Et
+            </button>
+
+            <button class="button button-small button-balanced user-active" ng-show="is_show_user[$index]==true || user.work_status==1">
+              Aktif
+            </button>
+
+
+            <button class="button button-small button-balanced user-active" ng-show="user.work_status==0 && !is_show_user_check[$index] && !is_show_user[$index]" ng-click="leaveTaskUser(user.task_id,user.user_id);is_show_user_check[$index]=true">
+              İptal Et
+            </button>
+        </div>  
+
+     </div>
+
+    </div>
+
+
+  <div class="header-content-profile-not-user" ng-hide="users">
+    <div class="mycaris"> 
+        <div class="row mylistcartop">   
+            <div class="col detail-list"> 
+                <i class="icon ion-ios-body icon-not"></i><br>
+                <div class="detail-notfound"> Kullanıcı isteği henüz yapılmamıştır.</div>
+            </div>
+         </div>
+         
+     </div>
+  </div>
+
+
+    <div class="header-content">
+      
+      <i class="icon ion-edit edit-modal-criter"></i>
+      <div class="row">
+          <span class="col col-50">Bütçeniz (TL)</span>
+          <label class="item item-input col col-50 text-right bold">
+             {{task_detail.budget}} ₺
+          </label>
+         </div>
+         
+
+        <div class="row">
+          <span class="col col-50">Yapılması istenen kişi sayısı</span>
+          <label class="item item-input col col-50 text-right bold">
+             {{task_detail.people}}
+          </label>
+         </div>
+
+         <div class="row">
+          <span class="col col-50">Bitiş Tarihi</span>
+          <label class="item item-input col col-50">
+              <input type="{{dateType}}" ng-model="task_detail.finish_date" value="finish_date">
+          </label>
+        </div>
+
+        <div class="row">
+          <span class="col col-50">Bitiş Saati</span>
+          <label class="item item-input col col-50">
+              <input type="{{dateTimes}}" ng-model="task_detail.finish_time" value="task_detail.finish_time">
+          </label>
+        </div>
+    </div>
+
+
+
+   
+    <label class="item item-input hide">
+        <textarea rows="8" ng-model="task.description" placeholder="Açıklama Giriniz" class="send-task-area"></textarea>
+    </label>
+
+    <div class="clear"></div>
+    <div class="task-detail-criter-send" ng-show="criter_result">
+        <div ng-repeat="criter in criters" class="criters">
+                <i class="icon ion-edit edit-modal-criter"></i>
+                <div class="criter-title"> {{criter.criterion_heading}}</div>
+                <div class="criter-desc"> {{criter.criterion_content}}  </div>
+                <div class="criter-budget"> {{criter.budget}}  TL </div>
+        </div>
+    </div>
+   <div class="clear"></div>
+     <label class = "item item-input item-select">
+       <div class="row">
+            <button class="button button-full button-assertive col col-50" ng-click="takePhoto()">
+               Görev Fotoğrafı Çek
+            </button>
+            <button class="button button-full button-assertive col col-50" ng-click="choosePhoto()">
+               Galeriden Seç
+            </button>
+            <br>
+            <div class="clear"></div>
+            <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}" style="text-align: center;height: 120px; width: 100%;">
+       </div>
+    </label> 
+
+
+  </ion-content>
+</ion-view>
+
+
+
+<script id="templates/loading.html" type="text/ng-template">
+        <img src="img/train.gif"/> 
+</script>
+

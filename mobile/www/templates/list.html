@@ -1,0 +1,11 @@
+<ion-view view-title="my cameras">
+  <ion-content class="camera_list">
+      <ion-list>
+         <ion-item href="#/app/road_detail" ng-repeat="item in camera">
+            <div class="item_img" style="background:url({{item.img}})no-repeat; background-size:cover;">
+                <p>camera{{item.id}}</p> 
+            </div>    
+         </ion-item>
+      </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,36 @@
+<ion-view view-title="Road Details" cache-view="false">
+    <ion-header-bar class="bar bar-subheader sub_head">
+        <div class="row">
+           <div class="col col-50 text-center" ng-click="activeTab(1)" ng-class="{'active_item main_color':active_detail==1}">
+               <p ng-class="{'animated flash':active_detail==1}">Map</p> 
+           </div>
+           <div class="col col-50 text-center" ng-click="activeTab(2)" ng-class="{'active_item main_color':active_detail==2}">
+               <p ng-class="{'animated flash':active_detail==2}">Live view</p> 
+           </div>    
+        </div>
+    </ion-header-bar>
+    <ion-content class="map_page has-subheader" scroll="false">
+        <div id="map" data-tap-disabled="true">
+        </div>
+        <div class="row road_detail" ng-if="active_detail==1">
+          <div class="col col-75">
+             <p><span class="main_color">From:</span>cannon street , Liverpool</p>
+             <p><span class="sec_color">To:</span>32 A,South Street, London</p>  
+             <div class="time_distance">  
+                <span><i class="ion-android-time main_color"></i>12 minutes</span> 
+                <span><i class="ion-model-s main_color"></i>8 KM</span>  
+             </div>     
+          </div>
+          <div class="col col-25 bg_color text-center">
+             <p><i class="ion-android-locate"></i>Change</p>  
+          </div>    
+        </div>
+        <div class="road_camera" ng-if="active_detail==2" ng-hide="close_this">
+           <img src="img/road.png"/>
+           <span class="bg_color close_btn" ng-click="closeCamera()"><i class="ion-close"></i></span>    
+           <p class="main_color">Albemarle Street<span>51.3698°N - 0.1023°W</span></p>    
+        </div>
+        <a href="#/app/list" class="button button-block main_btn sec_bg map_btn" ng-if="active_detail!=1">View all cameras</a>
+    </ion-content>
+</ion-view>
+ 

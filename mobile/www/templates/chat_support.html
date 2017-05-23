@@ -1,0 +1,59 @@
+﻿<ion-view view-title="chat">
+    <ion-content has-bouncing="true" class="has-header has-footer" delegate-handle="userMessageScroll" style="background: url(../img/bg.png) no-repeat;background-size: cover;">
+
+
+        <div ng-repeat="messages in allSessions" class="message-wrapper">
+
+            <div>
+
+                <div ng-if="user_id == messages.gonderen_id" class="chat-bubble right">
+
+                    <div class="message" ng-bind-html="messages.mesaj" autolinker>
+                    </div>
+
+                    <div class="message-detail">
+                        <span class="bold"></span>
+                        <span>{{messages.tarih | date:'medium' }}</span>
+                    </div>
+
+                </div>
+
+                <div ng-if="user_id == messages.alici_id" class="chat-bubble left">
+
+                    <div class="message" ng-bind-html="messages.mesaj" autolinker>
+                    </div>
+
+                    <div class="message-detail">
+                        <span class="bold"></span>
+                        <span>{{messages.tarih | date:'medium' }}</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="cf"></div>
+
+        </div>
+
+
+
+
+    </ion-content>
+
+
+
+    <form name="sendMessageForm" ng-submit="sendPush(userMessage)" novalidate>
+        <ion-footer-bar class="bar-stable item-input-inset message-footer" keyboard-attach>
+            <label class="item-input-wrapper input-area">
+                      <textarea ng-model="userMessage" value="" class="textaream" placeholder="Mesajınızı yazınız..." required minlength="1" maxlength="1500" msd-elastic></textarea>
+                  </label>
+            <div class="footer-btn-wrap">
+                <button class="button button-icon icon ion-android-send footer-btn" type="submit" ng-disabled="!userMessage || userMessage === ''">
+                    </button>
+            </div>
+        </ion-footer-bar>
+    </form>
+
+
+</ion-view>

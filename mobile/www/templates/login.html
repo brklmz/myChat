@@ -1,0 +1,25 @@
+<ion-view>
+    <ion-content class="login_bg text-center">
+        <div class="logo">
+            <img src="img/logo.png">
+        </div>
+
+        <form class="app_form">
+            <div class="list list-inset">
+                <label class="item item-input">
+                <input type="text" placeholder="Kullanıcı Adı" ng-model="userInfo.username">
+            </label>
+                <label class="item item-input">
+                <input type="password" placeholder="Şifre" ng-model="userInfo.password">
+            </label>
+
+                <a href="javascript:void(0)" class="button button-block main_btn bg_color" ng-click="login()">Giriş Yap</a>
+
+                <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"></div>
+
+                <a href="#/register" class="button button-block main_btn sec_bg ">Kayıt Ol</a>
+            </div>
+        </form>
+
+    </ion-content>
+</ion-view>

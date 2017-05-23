@@ -1,0 +1,85 @@
+<ion-view view-title="{{task_detail.task_tittle}}">
+  <ion-content class="padding bg_white profile_data">
+
+
+  <div class="row padding-none">
+
+          <div class="col col-20">
+             <img src="img/profile.png" class="img-responsive detail-img">
+          </div>
+
+          <div class="col col-40 ">
+            <h4>{{task_detail.ad}} {{task_detail.soyad}}</h4>
+          <p> 
+            <i class="ion-android-star"></i>
+            <i class="ion-android-star"></i>
+            <i class="ion-android-star"></i>
+            <i class="ion-android-star"></i>
+            <i class="ion-android-star"></i>
+          </p>
+          </div>
+
+          <div class="col col-40 buy-task-detail">
+              {{finish_date}}<br>
+              {{finish_time}}
+          </div>
+
+        </a>
+
+
+  </div>
+
+
+    <div class="row padding-none">
+       <!-- <div class="col col-33 profile_img main_color padding-none hide">
+             <img ng-src="{{task_detail.img_url}}"/><br>
+             <a class="button btn-budget button-assertive icon-left ion-card" href="#/login">{{task_detail.budget}} TL</a>
+        </div> -->
+        <div class="col col">
+             <div class="task-detail">
+             <h4><strong>{{task_detail.task_tittle}} </strong> </h4>
+             {{task_detail.explanation}}</div>
+        </div>
+
+    </div>
+    
+    <div class="task-detail-criter" ng-show="criter_result">
+        <div ng-repeat="criter in criters" class="criters">
+                <div class="criter-title"> {{criter.criterion_heading}} </div>
+                <div class="criter-desc"> {{criter.criterion_content}}  </div>
+                <br>
+                </div>
+        </div>
+    </div>
+
+
+
+     <div class="budget-detail"> Elde Edilen Kazanç :<strong> {{task_detail.budget}} TL  </strong> </div><br><br>
+
+   <!-- <div class="task-detail-timer row">  
+        <div class="col col-20"><i class="ion-ios-stopwatch"></i> </div>
+        <div class="col col-80"> {{backTime}} </div>
+    </div>
+
+    
+    <div class="list">                
+        <label class="item item-input">
+            <span class="input-label sec_bg">Başlangıç Tarihi</span>
+            <span class="input-label sec_bg">{{task_detail.start_date}}</span>
+            <span class="input-label sec_bg">{{task_detail.start_time}}</span>
+        </label>
+        <label class="item item-input">
+            <span class="input-label sec_bg">Bitiş Tarihi</span>
+            <span class="input-label sec_bg">{{task_detail.finish_date}}</span>
+            <span class="input-label sec_bg">{{task_detail.finish_time}}</span>
+        </label>
+    </div>
+    -->
+
+
+    <a href="#/app/environment">
+        <button class="button button-block main_btn button-energized icon-left ion-ionic">Başka Görevlere Göz at</button>
+    </a>
+
+  </ion-content>
+</ion-view>

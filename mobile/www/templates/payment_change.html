@@ -1,0 +1,77 @@
+<ion-view view-title="Ödeme Bilgileri">
+    <ion-content class="bg_white  task_details">
+
+
+        <div class="profile-top">
+
+            <div class="row ">
+                <img src="{{picture}}" id="my-profile-image">
+            </div>
+
+            <div class="row">
+                <div class="name">{{first_name}} {{last_name}} </div>
+            </div>
+
+            <div class="profile_point">
+                <div class="name">5,252 <br> Tecrübe Puanı</div>
+            </div>
+
+            <div class="profile_point_start">
+                <span class="star_text"> 5/4.9 Başarı </span> <br>
+                <i class="icon ion-ios-star star_profile"></i>
+                <i class="icon ion-ios-star star_profile"></i>
+                <i class="icon ion-ios-star star_profile"></i>
+                <i class="icon ion-ios-star star_profile"></i>
+                <i class="icon ion-ios-star star_profile"></i>
+            </div>
+
+        </div>
+
+        <div class="safe-icon">
+            <div class="profile-price"> 0.00 TL </div>
+        </div>
+
+
+        <div class="padding profile_content">
+
+            <div class="prof-content">
+
+                <div class="list">
+
+
+                    <label class="item item-input item-stacked-label">
+                          <span class="input-label">Hesap Sahibi Adı</span>
+                          <input type="text" ng-model="data.first_name" >
+                        </label>
+                    <label class="item item-input item-stacked-label">
+                          <span class="input-label">Soyadı</span>
+                          <input type="text" ng-model="data.last_name">
+                        </label>
+                    <label class="item item-input item-stacked-label">
+                          <span class="input-label">Telefonu</span>
+                          <input type="text" ng-model="data.phone" >
+                        </label>
+                    <label class="item item-input item-stacked-label">
+                          <span class="input-label">Hesap Numarası</span>
+                          <input type="text" ng-model="data.account_num" >
+                        </label>
+                    <label class="item item-input item-stacked-label">
+                          <span class="input-label">IBAN Numarası</span>
+                          <input type="text" ng-model="data.iban_num" >
+                        </label>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <button ng-click="userUpdate()" type="submit" class="button button-block-center main_btn button-green  icon-left ion-ios-list-outline ">Kaydet</button>
+
+
+
+    </ion-content>
+</ion-view>

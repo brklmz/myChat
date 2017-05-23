@@ -1,0 +1,33 @@
+ <ion-view view-title="Kalvers Nedir ?" class="bg_white_color">
+
+       <ion-content scroll="false" class="intro">
+
+        <button class="btn_next"
+                ng-click="next()" ng-show="slideIndex != 3">
+          İLERİ
+        </button>
+        <button class="btn_finish"
+                ng-click="startApp()" ng-show="slideIndex == 3">
+          BAŞLA
+        </button>
+
+
+        <ion-slide-box on-slide-changed="slideChanged(index)">
+
+          <ion-slide style="background-image: url('img/intro/intro1.jpg');background-size: cover;">
+          </ion-slide>
+
+          <ion-slide style="background-image: url('img/intro/intro2.jpg');background-size: cover;">
+          </ion-slide>
+
+
+          <ion-slide style="background-image: url('img/intro/intro3.jpg');background-size: cover;">
+          </ion-slide>
+
+          <ion-slide style="background-image: url('img/intro/intro4.jpg');background-size: cover;">
+          </ion-slide>
+
+        </ion-slide-box>
+
+       </ion-content> 
+      </ion-view>

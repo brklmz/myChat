@@ -1,0 +1,133 @@
+<ion-view view-title="Anasayfa">
+
+    <ion-content class="padding home" scroll="false">
+        <!--
+    <ion-slide-box show-pager="true" on-slide-changed="onSlideChanged($index)" class="hide">
+        <ion-slide> 
+         <a href="#/app/kalvers-detail/1">
+          <div class="box">
+            <img  src="img/slide/slide1.jpg" class="slide-img">
+          </div>
+         </a> 
+        </ion-slide>
+
+        <ion-slide> 
+         <a href="#/app/kalvers-detail/2">
+          <div class="box">
+            <img  src="img/slide/slide_2.jpg" class="slide-img">
+          </div>
+         </a> 
+        </ion-slide>
+
+        <ion-slide> 
+         <a href="#/app/kalvers-detail/{3">
+          <div class="box">
+            <img  src="img/slide/slide1.jpg" class="slide-img">
+          </div>
+         </a> 
+        </ion-slide>
+
+      </ion-slide-box> 
+        -->
+
+
+        <ion-scroll scrollY="true" class="home_scroll">
+
+            <ion-list class="street_list">
+                <ion-item ng-repeat="item in tasks">
+                    <a href="#/app/task-detail/{{item.id}}">
+                        <div class="row">
+                            <a class="item item-list-detail" href="#/app/other_profile/{{item.user_id}}">
+                                <img id="profile-image" ng-src="{{item.user_img_url}}">
+                            </a>
+                            <!-- data-ng-src="data:image/jpg;base64,{{imgurl}}" -->
+
+                            <div class="price_tag">{{item.budget}} ₺ </div>
+
+                            <div class="col  bg_color5">
+                                <h3 class="main_color main-list-item">{{item.task_tittle}}</h3>
+                                <p class="text-back">{{item.short_description}}</p>
+                            </div>
+
+                        </div>
+
+                        <div class="row item-sub">
+
+                            <div class="col col-80">
+                                <ion-item class="item-text-wrap home-item">
+                                    <i class="icon ion-clock icon-home-time"></i> {{taskArray[$index].betwenTime | millSecondsToTimeStringHome | to_trusted}} kaldı.
+                                </ion-item>
+                            </div>
+
+                            <div class="col col-20 right-home-list ">
+                                <ion-item class="item-text-wrap home-item">
+                                    <i class="icon ion-ios-people icon-home-time"></i> {{item.people}}
+                                </ion-item>
+                            </div>
+
+                        </div>
+
+
+                    </a>
+                </ion-item>
+            </ion-list>
+
+
+        </ion-scroll>
+
+
+    </ion-content>
+
+    <ion-tabs class="tabs-positive tabs-icon-top">
+        <ion-tab title="Son Eklenenler" icon-on="ion-ios-list-outline" icon-off="ion-aperture" ng-click="goto('home')">
+        </ion-tab>
+        <ion-tab title="Etrafındakiler" icon-on="ion-ionic" icon-off="ion-ionic" ng-click="goto('environment')">
+        </ion-tab>
+        <ion-tab title="Fırsatlar" icon-on="ion-ios-world" icon-off="ion-ios-world-outline" ng-click="goto('global')">
+        </ion-tab>
+    </ion-tabs>
+
+</ion-view>
+
+<script id="templates/loading.html" type="text/ng-template">
+    <img src="img/train.gif" />
+</script>
+
+
+<!-- 
+
+  <ion-content class="padding grey" > 
+    <div class="topmap">
+      <label >
+          <map on-create="placeCreated(map)" data="{{places}}" style="height:100%"> </map>
+       </label>
+     </div>
+    <div class="checkcont">  
+    <ion-scroll zooming="true" direction="y" style="height:100%;">
+    <div  id="checkloaddata"  ng-repeat="item in placeList">
+    <a href="#/tab/checkServices/{{item.place.place_id}}/{{item.type}}">
+    <div class="row rowpad">
+     <div class="row text-left lst" >
+       <div class="col col-10 text-center">  <img src="img/servicesleft.PNG" class="iconsize1"> </div>
+       <div class="col col-80 checkservicesdetails text-right">            
+        <h4 class="text-left">{{item.place.name}}</h4>
+        <div class="checkcontent">{{item.place.formatted_address}}</div>
+               <div class="col item-note text-left checkicon">
+        <h5> 
+            <i class="icon ion-android-person text-right"> </i> 1.684 
+            <i class="icon ion-ios-location"> </i> {{item.distance}} Km 
+            <i class="icon ion-chatbox-working"> </i> {{item.place.reviews.length}} Comment 
+        </h5>
+        </div>
+        </div>
+        <div class="col col-10 text-left">  <img src="img/Icon/servicesicon1.PNG" class="iconsize5"> <br>  <img src="img/Icon/servicesicon2.PNG" class="iconsize6"> </div>
+    </div>            
+    </div>
+    </div>
+   </a>
+   </div>
+   </ion-scroll>
+   </div>
+  </ion-content>
+
+  -->

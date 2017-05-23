@@ -1,0 +1,45 @@
+<ion-view view-title="Hesabım">
+    <ion-content has-bouncing="true" class="bg_white profile_data task_details" style="background: url(../img/bg.png) no-repeat;background-size: cover;">
+
+
+        <div class="profile-top">
+
+            <div class="row ">
+                <img src="{{picture}}" id="my-profile-image" ng-click="showModal()">
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+        <div class="padding profile_content">
+
+
+
+
+            <div class="prof-content">
+
+                <div class="list">
+                    <a href="javascript:void(0)" ng-click="namePopup()" class="item"><i class="icon ion-edit"></i> {{first_name}}</a>
+                    <a href="javascript:void(0)" ng-click="lastnamePopup()" class="item"><i class="icon ion-edit"></i> {{last_name}}</a>
+                    <a href="javascript:void(0)" ng-click="passPopup()" class="item"><i class="icon ion-edit"></i> Şifre değiştir</a>
+                    <a href="#/logout" class="item"><i class="icon ion-edit"></i> Çıkış yap</a>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </ion-content>
+</ion-view>

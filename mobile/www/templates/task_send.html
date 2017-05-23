@@ -1,0 +1,115 @@
+<ion-view view-title="{{task_detail.task_tittle}}">
+  <ion-content class="bg_white profile_data ">
+
+
+  <div class="row header-top">
+
+
+         <ion-list class="street_list header-list">
+            <ion-item class="detail-item">
+               <div class="row">
+
+                  <img id="profile-image" src="img/profile.png"><!-- data-ng-src="data:image/jpg;base64,{{imgurl}}" -->
+
+                  <div class="price_tag">{{task_detail.budget}} ₺ </div>
+
+                  <div class="col  bg_color5">
+                      <h3 class="main_color main-list-item">{{task_detail.task_tittle}}</h3>
+                      <p class="text-back">{{task_detail.short_description}}</p> 
+                  </div>
+               </div>
+
+               <div class="row item-sub">
+
+                   <div class="col col-80">
+                    <ion-item class="item-text-wrap home-item">
+                          <i class="icon ion-clock icon-home-time"></i>
+                         {{backTime}} Kaldı.
+                    </ion-item>
+                   </div> 
+
+                    <div class="col col-20 right-home-list ">
+                    <ion-item class="item-text-wrap home-item">
+                         <i class="icon ion-ios-people icon-home-time"></i>
+                        {{task_detail.people}} 
+                    </ion-item>
+                   </div> 
+
+               </div>
+
+            </ion-item>
+       </ion-list>
+
+
+  </div>
+
+
+  <div class="padding">
+
+   <div class="header-content">
+        {{task_detail.explanation}}
+   </div>
+
+
+   <div class="row">
+         <button class="button button-stable btn-check icon-left ion-ios-location" ng-click="finishCheck()">
+           Check in Yap<span ng-show="isCheckinStatus" class="text-right">ıldı <i class="icon ion-checkmark item-right red"></i> </span>
+         </button>
+   </div>
+
+
+   <div class="row">
+        <textarea rows="8" ng-model="task.description" placeholder="Açıklama Giriniz" class="send-task-area"></textarea>
+   </div>
+
+
+
+    <div class="clear"></div>
+    <div class="task-detail-criter-send" ng-show="criter_result">
+        <div ng-repeat="criter in criters" class="criters">
+                <div class="criter-title"> {{criter.criterion_heading}} </div>
+                <div class="criter-desc"> {{criter.criterion_content}}  </div>
+                <div class="criter-budget"> {{criter.budget}}  TL  
+                <br><br>
+               
+                <div class="clear"></div><br>
+                <div class="row">Açıklama Gir </div>
+                <label class="item item-input">
+                    <textarea rows="4" ng-model="task.criter_short_description[$index]" class="border-grey"></textarea>
+                </label>
+                
+
+                </div>
+        </div>
+    </div>
+   <div class="clear"></div>
+     <label class = "item item-input item-select">
+       <div class="row">
+            <button class="button button-full button-assertive col col-50" ng-click="takePhoto()">
+               Görev Fotoğrafı Çek
+            </button>
+            <button class="button button-full button-assertive col col-50" ng-click="choosePhoto()">
+               Galeriden Seç
+            </button>
+            <br>
+            <div class="clear"></div>
+            <img ng-show="imgURI !== undefined" ng-src="{{imgURI}}" style="text-align: center;height: 120px; width: 100%;">
+       </div>
+    </label> 
+
+    
+    <button class="button button-block main_btn button-balanced icon-left ion-flag" ng-click="finishTask()" >Görevi Gönder</button>  
+
+
+  </div>
+
+
+  </ion-content>
+</ion-view>
+
+
+
+<script id="templates/loading.html" type="text/ng-template">
+        <img src="img/train.gif"/> 
+</script>
+

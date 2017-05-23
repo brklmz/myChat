@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app_server",
+    "\\app_server\\Controller",
+    "\\app_server\\Models",
+    "\\app_server\\Routes",
+    "\\app_server\\Views",
+    "\\app_server\\Views\\denemem"
+  ],
+  "SelectedNode": "\\app.js",
+  "PreviewInSolutionExplorer": false
+}
